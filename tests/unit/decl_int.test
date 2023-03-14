@@ -1,0 +1,13 @@
+Int x = 7;
+#EndInput
+#Parser Correct
+Int x = 7;
+#EndParser
+#Pathanalysis Correct
+#Tarjan Correct
+[["x"]]
+#Typing Correct
+x :: Int;
+#EndTyping
+#Overloading Correct
+#CodeGenerator Skip

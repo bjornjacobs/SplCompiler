@@ -1,0 +1,28 @@
+xor(a, b) :: Bool Bool -> Bool {
+	return (a || b) && !(a && b);
+}
+
+implies(a, b) :: Bool Bool -> Bool {
+	if (!a) {return True;}
+	else {return b;}
+}
+main() {
+	print(xor(True, True));
+	print(xor(False, True));
+	print(xor(True, False));
+	print(xor(False, False));
+
+	print(implies(True, True));
+	print(implies(False, True));
+	print(implies(True, False));
+	print(implies(False, False));
+}
+#EndInput
+#Typing Correct
+xor :: Bool Bool -> Bool;
+implies :: Bool Bool -> Bool;
+main :: -> Void;
+#EndTyping
+#CodeGenerator Correct
+FalseTrueTrueFalseTrueTrueFalseTrue
+#EndCodeGenerator

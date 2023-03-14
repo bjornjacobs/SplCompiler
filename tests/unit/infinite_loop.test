@@ -1,0 +1,12 @@
+main() {
+    while(True) {
+
+    }
+}
+#EndInput
+#Pathanalysis Correct
+#Typing Correct
+main :: -> Void; {
+}
+#EndTyping
+#CodeGenerator Error

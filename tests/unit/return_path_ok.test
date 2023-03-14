@@ -1,0 +1,17 @@
+main() {
+    if (True) {} else {}
+}
+#EndInput
+#Parser Correct
+main() {
+    if (True) {
+    } else {
+    }
+}
+#EndParser
+#Pathanalysis Correct
+#Tarjan Correct
+[["main"]]
+#Typing Correct
+main :: -> Void;
+#EndTyping

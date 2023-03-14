@@ -1,0 +1,23 @@
+deducting_a_minus_id() :: -> Int
+{
+    return 1;
+}
+
+doing_just_a_funCall() :: -> Void
+{
+    print(4 - -deducting_a_minus_id());
+}
+
+main() :: -> Void
+{
+    doing_just_a_funCall();
+}
+#EndInput
+#Typing Correct
+deducting_a_minus_id :: -> Int;
+doing_just_a_funCall :: -> Void;
+main :: -> Void;
+#EndTyping
+#CodeGenerator Correct
+5
+#EndCodeGenerator

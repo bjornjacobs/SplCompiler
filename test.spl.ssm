@@ -1,0 +1,305 @@
+ajs 0
+ldr SP
+str R5
+bra __endlength
+length: link 1
+annote MP -2 -2 green "Function argument lst"
+ldc 0
+stl 1
+annote MP 1 1 green "Local variable l"
+length_4_42whilestart:
+ldl -2
+ldl -2
+ldc 0
+eq
+str RR
+ldr RR
+ldc 0
+eq
+annote SP 0 0 black "Result of !x"
+brf length_4_42whileend
+ldl 1
+ldc 1
+add
+annote SP 0 0 red "Result of add"
+stl 1
+ldl -2
+ldh 1
+annote SP 0 0 black ".tl value"
+stl -2
+bra length_4_42whilestart
+length_4_42whileend:
+ldl 1
+str RR
+unlink
+ret
+__endlength:
+bra __endmain
+main: link 0
+ldc 0
+ldc 100
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 100
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 100
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 100
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 100
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 108
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 114
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 111
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 119
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 32
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 111
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 108
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 108
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 101
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 72
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+bsr printString
+ajs -1
+unlink
+ret
+__endmain:
+bra __endprintBool
+printBool: link 0
+annote MP -2 -2 green "Function argument bool"
+ldl -2
+brf printBool_4_260iff
+ldc 0
+ldc 101
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 117
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 114
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 84
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+bsr printString
+ajs -1
+bra printBool_4_260ife
+printBool_4_260iff:
+ldc 0
+ldc 101
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 115
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 108
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 97
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+ldc 70
+sth
+annote HP -1 0 black "list value"
+ajs -1
+sth
+annote HP -1 0 black "list pointer"
+ajs 1
+swp
+ajs -1
+bsr printString
+ajs -1
+printBool_4_260ife:
+unlink
+ret
+__endprintBool:
+bra __endprintString
+printString: link 0
+annote MP -2 -2 green "Function argument str"
+printString_4_154whilestart:
+ldl -2
+ldl -2
+ldc 0
+eq
+str RR
+ldr RR
+ldc 0
+eq
+annote SP 0 0 black "Result of !x"
+brf printString_4_154whileend
+ldl -2
+ldh 0
+annote SP 0 0 black ".hd value"
+trap 1
+ldl -2
+ldh 1
+annote SP 0 0 black ".tl value"
+stl -2
+bra printString_4_154whilestart
+printString_4_154whileend:
+unlink
+ret
+__endprintString:
+bsr main

@@ -1,0 +1,17 @@
+// At this point you maybe don't see what the problem is.
+// Wait until you try to implement your code generator.
+
+equal(x, y)
+{
+  return x == y;
+}
+main() {
+  print(equal(1,1));
+  print(equal('c','c'));
+  print(equal('c','a'));
+}
+#EndInput
+#Overloading Error
+#CodeGenerator Correct
+TrueTrueFalse
+#EndCodeGenerator

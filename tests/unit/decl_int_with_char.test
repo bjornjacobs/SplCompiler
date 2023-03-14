@@ -1,0 +1,9 @@
+Int x = 'c';
+#EndInput
+#Parser Correct
+Int x = 'c';
+#EndParser
+#Pathanalysis Correct
+#Tarjan Correct
+[["x"]]
+#Typing Error

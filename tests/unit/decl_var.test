@@ -1,0 +1,11 @@
+var x = 'c';
+#EndInput
+#Parser Correct
+var x = 'c';
+#EndParser
+#Pathanalysis Correct
+#Tarjan Correct
+[["x"]]
+#Typing Correct
+x :: Char;
+#EndTyping

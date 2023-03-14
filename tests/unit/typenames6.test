@@ -1,0 +1,7 @@
+main(y, z) :: a b -> Void {
+    c a = y;
+    c b = z;
+    return;
+}
+#EndInput
+#Parser Error

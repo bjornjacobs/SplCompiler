@@ -1,0 +1,11 @@
+id(x) {
+    return x;
+}
+#EndInput
+#Parser Skip
+#Pathanalysis Correct
+#Typing Correct
+id :: a -> a;
+#EndTyping
+#Overloading Correct
+#CodeGenerator Skip

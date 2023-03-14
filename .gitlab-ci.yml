@@ -1,0 +1,23 @@
+image: haskell
+
+stages:
+    - build
+    - test
+
+workflow:
+    rules:
+        - if: '$CI_COMMIT_BRANCH'
+
+build:
+    stage: build
+    script:
+        - ghc Main
+    artifacts: 
+        paths:
+            - Main
+
+run:
+    stage: test
+    script:
+        - ./Main -t
+

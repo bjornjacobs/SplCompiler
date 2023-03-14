@@ -1,0 +1,13 @@
+f(x) :: a -> a {
+    return x + 1;
+}
+#EndInput
+#Parser Correct
+f(x) :: a -> a {
+    return (x + 1);
+}
+#EndParser
+#Pathanalysis Correct
+#Tarjan Correct
+[["f"]]
+#Typing Error

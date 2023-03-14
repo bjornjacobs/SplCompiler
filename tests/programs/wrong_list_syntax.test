@@ -1,0 +1,9 @@
+main() {
+    if (f(3 + x) == (2, y:[])) {
+        return f(x);
+    } else {
+        return (0, [5]);
+    }
+}
+#EndInput
+#Parser Error

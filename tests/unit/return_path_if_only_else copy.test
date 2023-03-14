@@ -1,0 +1,13 @@
+main() {
+    if (True) {} else {return;}
+}
+#EndInput
+#Parser Correct
+main() {
+    if (True) {
+    } else {
+        return;
+    }
+}
+#EndParser
+#Pathanalysis Error

@@ -1,0 +1,10 @@
+main() :: -> Void{
+    var x = 5;
+    return;
+}
+#EndInput
+#Typing Correct
+main :: -> Void; {
+    x :: Int;
+}
+#EndTyping

@@ -1,0 +1,6 @@
+main() {
+    return;
+}
+Void x = main();
+#EndInput
+#Parser Error

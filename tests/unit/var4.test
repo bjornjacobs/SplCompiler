@@ -1,0 +1,10 @@
+main(y) :: a -> Void{
+    var x = y;
+    return;
+}
+#EndInput
+#Typing Correct
+main :: a -> Void; {
+    x :: a;
+}
+#EndTyping

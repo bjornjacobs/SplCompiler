@@ -1,0 +1,566 @@
+ldc 0
+ldc 0
+ldc 0
+stmh 3
+annote HP -3 -3 black "free block"
+annote HP -2 -2 red "next free block"
+annote HP -1 -1 black "-"
+ldc 1
+sub
+str R7
+ajs 0
+ldr SP
+str R5
+bra __end_free
+_refplus:
+link 0
+ldl -2
+ldc 0
+lt
+brf __endrefplus
+ldl -2
+ldc 2147483647
+sub
+lda -1
+ldc 1
+add
+ldl -2
+ldc 2147483647
+sub
+sta -1
+__endrefplus:
+unlink
+ret
+_refmin:
+link 0
+ldl -2
+ldc 0
+lt
+brf __endrefmin
+ldl -2
+ldc 2147483647
+sub
+lda -1
+ldc 1
+sub
+lds 0
+ldc 0
+eq
+brf _afterfree
+ajs -1
+ldl -2
+ldc 2147483647
+sub
+bsr _free
+bra __endrefmin
+_afterfree:
+ldl -2
+ldc 2147483647
+sub
+sta -1
+__endrefmin:
+unlink
+ret
+_malloc:
+ldr R7
+str RR
+ldc 0
+ldr R7
+sta -1
+annote R7 -1 -1 black "refcount"
+annote R7 0 0 red "value1"
+annote R7 1 1 red "value2"
+ldr R7
+lda 0
+lds 0
+ldc 0
+eq 0
+brf _endmalloc
+ajs -1
+ldc 0
+ldc 0
+ldc 0
+stmh 3
+annote HP -3 -3 black "free block"
+annote HP -2 -2 red "next free block"
+annote HP -1 -1 black "-"
+ldc 1
+sub
+_endmalloc:
+str R7
+ret
+_free:
+link 0
+ldl -2
+ldma 0 2
+bsr _refmin
+ajs -1
+bsr _refmin
+ajs -1
+ldc 0
+ldr R7
+ldl -2
+stma -1 2
+ldl -2
+str R7
+annote R7 -1 -1 black "free block"
+annote R7 0 0 red "Next free block"
+annote R7 1 1 red "-"
+unlink
+ret
+__end_free:
+bra __endlength
+length: link 1
+ldl -2
+bsr _refplus
+ajs -1
+annote MP -2 -2 green "Function argument lst"
+ldc 0
+bsr _refplus
+stl 1
+annote MP 1 1 green "Local variable l"
+length_9_43whilestart:
+ldl -2
+ldl -2
+ldc 0
+eq
+str RR
+ldr RR
+ldc 0
+eq
+ldc 2147483647
+and
+annote SP 0 0 black ".tl value"
+brf length_9_43whileend
+ldl 1
+ldc 2
+mul
+ldc 2
+div
+ldc 1
+ldc 2
+mul
+ldc 2
+div
+add
+ldc 2147483647
+and
+annote SP 0 0 red "Result of add"
+ldl 1
+str R6
+bsr _refplus
+stl 1
+ldr R6
+bsr _refmin
+ajs -1
+ldl -2
+ldc 2147483647
+sub
+ldh 1
+annote SP 0 0 black ".tl value"
+ldl -2
+str R6
+bsr _refplus
+stl -2
+ldr R6
+bsr _refmin
+ajs -1
+bra length_9_43whilestart
+length_9_43whileend:
+ldl 1
+str RR
+bra _length_ret
+_length_ret:
+ldl 1
+bsr _refmin
+ldl -2
+bsr _refmin
+unlink
+ret
+__endlength:
+bra __endmain
+main: link 3
+ldc 3
+ldc 0
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+stl 1
+annote MP 1 1 green "Local variable y"
+ldc 0
+ldc 1
+ldc 2
+ldl 1
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+stl 2
+annote MP 2 2 green "Local variable x"
+ldc 0
+bsr _refplus
+stl 3
+annote MP 3 3 green "Local variable b"
+ldl 2
+bsr _refplus
+ldl 1
+ldc 2147483647
+sub
+lds 0
+lda 1
+bsr _refmin
+ajs -1
+sta 1
+ldl 3
+ldc 2
+mul
+ldc 2
+div
+ldc 0
+ldc 2
+mul
+ldc 2
+div
+div
+ldc 2147483647
+and
+annote SP 0 0 red "Result of div"
+ldl 3
+str R6
+bsr _refplus
+stl 3
+ldr R6
+bsr _refmin
+ajs -1
+bra _main_ret
+_main_ret:
+ldl 3
+bsr _refmin
+ldl 2
+bsr _refmin
+ldl 1
+bsr _refmin
+unlink
+ret
+__endmain:
+bra __endprintBool
+printBool: link 0
+ldl -2
+bsr _refplus
+ajs -1
+annote MP -2 -2 green "Function argument bool"
+ldl -2
+brf printBool_9_261iff
+ldc 84
+ldc 114
+ldc 117
+ldc 101
+ldc 0
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr printString
+ajs -1
+bra printBool_9_261ife
+printBool_9_261iff:
+ldc 70
+ldc 97
+ldc 108
+ldc 115
+ldc 101
+ldc 0
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr printString
+ajs -1
+printBool_9_261ife:
+bra _printBool_ret
+_printBool_ret:
+ldl -2
+bsr _refmin
+unlink
+ret
+__endprintBool:
+bra __endprintIntList
+printIntList: link 0
+ldl -2
+bsr _refplus
+ajs -1
+annote MP -2 -2 green "Function argument l"
+ldc 91
+trap 1
+ldl -2
+ldl -2
+ldc 0
+eq
+str RR
+ldr RR
+ldc 0
+eq
+ldc 2147483647
+and
+annote SP 0 0 black ".tl value"
+brf printIntList_9_386iff
+ldl -2
+ldc 2147483647
+sub
+ldh 0
+annote SP 0 0 black ".hd value"
+ldc 2
+mul
+ldc 2
+div
+trap 0
+ldl -2
+ldc 2147483647
+sub
+ldh 1
+annote SP 0 0 black ".tl value"
+ldl -2
+str R6
+bsr _refplus
+stl -2
+ldr R6
+bsr _refmin
+ajs -1
+bra printIntList_9_386ife
+printIntList_9_386iff:
+printIntList_9_386ife:
+printIntList_9_449whilestart:
+ldl -2
+ldl -2
+ldc 0
+eq
+str RR
+ldr RR
+ldc 0
+eq
+ldc 2147483647
+and
+annote SP 0 0 black ".tl value"
+brf printIntList_9_449whileend
+ldc 44
+ldc 32
+ldc 0
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr _refplus
+bsr _malloc
+ldr RR
+stma 0 2
+annote RR 0 0 black "list value"
+annote RR 1 1 red "list pointer"
+ldr RR
+annote SP 0 0 red "Allocated on heap"
+ldc 2147483647
+add
+bsr printString
+ajs -1
+ldl -2
+ldc 2147483647
+sub
+ldh 0
+annote SP 0 0 black ".hd value"
+ldc 2
+mul
+ldc 2
+div
+trap 0
+ldl -2
+ldc 2147483647
+sub
+ldh 1
+annote SP 0 0 black ".tl value"
+ldl -2
+str R6
+bsr _refplus
+stl -2
+ldr R6
+bsr _refmin
+ajs -1
+bra printIntList_9_449whilestart
+printIntList_9_449whileend:
+ldc 93
+trap 1
+bra _printIntList_ret
+_printIntList_ret:
+ldl -2
+bsr _refmin
+unlink
+ret
+__endprintIntList:
+bra __endprintString
+printString: link 0
+ldl -2
+bsr _refplus
+ajs -1
+annote MP -2 -2 green "Function argument str"
+printString_9_155whilestart:
+ldl -2
+ldl -2
+ldc 0
+eq
+str RR
+ldr RR
+ldc 0
+eq
+ldc 2147483647
+and
+annote SP 0 0 black ".tl value"
+brf printString_9_155whileend
+ldl -2
+ldc 2147483647
+sub
+ldh 0
+annote SP 0 0 black ".hd value"
+trap 1
+ldl -2
+ldc 2147483647
+sub
+ldh 1
+annote SP 0 0 black ".tl value"
+ldl -2
+str R6
+bsr _refplus
+stl -2
+ldr R6
+bsr _refmin
+ajs -1
+bra printString_9_155whilestart
+printString_9_155whileend:
+bra _printString_ret
+_printString_ret:
+ldl -2
+bsr _refmin
+unlink
+ret
+__endprintString:
+bsr main

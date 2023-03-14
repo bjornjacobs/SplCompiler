@@ -1,0 +1,7 @@
+main() {
+    c a = 5;
+    c b = True;
+    return;
+}
+#EndInput
+#Parser Error

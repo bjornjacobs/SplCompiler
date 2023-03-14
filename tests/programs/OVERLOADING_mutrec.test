@@ -1,0 +1,18 @@
+f (x) {
+	return g (x);
+}
+
+g (x) {
+	return f (x);
+}
+
+main () {
+	print(g(42));
+}
+#EndInput
+#Typing Correct
+f :: a -> b;
+g :: a -> b;
+main :: -> Void;
+#EndTyping
+#Overloading Error

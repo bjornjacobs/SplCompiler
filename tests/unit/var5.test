@@ -1,0 +1,6 @@
+main(y) :: var -> Void{
+    var x = y;
+    return;
+}
+#EndInput
+#Parser Error

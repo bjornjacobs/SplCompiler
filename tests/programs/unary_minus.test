@@ -1,0 +1,12 @@
+Int x = 5 ------------------ 20;
+Int y =   ------------------ 20;
+main() {
+    print(x);
+    print('\n');
+    print(y);
+}
+#EndInput
+#CodeGenerator Correct
+25
+20
+#EndCodeGenerator

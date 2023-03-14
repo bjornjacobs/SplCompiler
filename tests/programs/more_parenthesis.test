@@ -1,0 +1,9 @@
+main() :: -> Void
+{
+	var a = (((((((((((((5)))))))))))));
+	return;
+}
+#EndInput
+#CodeGenerator Correct
+
+#EndCodeGenerator

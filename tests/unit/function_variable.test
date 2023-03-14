@@ -1,0 +1,15 @@
+main() {
+    return;
+}
+var x = main;
+#EndInput
+#Parser Correct
+main() {
+    return;
+}
+var x = main;
+#EndParser
+#Pathanalysis Correct
+#Tarjan Correct
+[["main"],["x"]]
+#Typing Error

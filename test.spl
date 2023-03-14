@@ -1,0 +1,8 @@
+g() {
+  var a = "dit wordt weg gehaald";
+  return a;
+}
+
+main() {
+  print(g());
+}

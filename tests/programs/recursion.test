@@ -1,0 +1,30 @@
+// Greatest common divisor,
+// "The granddaddy of all algorithms, because it is the oldest nontrivial
+// algorithm that has survived to the present day." -- Don Knuth
+
+// This one only works for positive n, m
+gcd (m, n) {
+  if (n < m) {
+    return gcd(n, m);
+  } else {
+    if (n == m){
+      return n;
+    } else {
+      // n > m
+      return gcd(m, n - m);
+    }
+  }
+}
+main() {
+  print(gcd(30, 50));
+  print(gcd(70, 70));
+  print(gcd(12, 13));
+}
+#EndInput
+#Typing Correct
+gcd :: Int Int -> Int;
+main :: -> Void;
+#EndTyping
+#CodeGenerator Correct
+10701
+#EndCodeGenerator

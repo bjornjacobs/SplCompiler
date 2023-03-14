@@ -1,0 +1,15 @@
+f(x) {
+    return g(x + 1);
+}
+g(x) {
+    return f(x);
+}
+#EndInput
+#Parser Skip
+#Pathanalysis Correct
+#Tarjan Correct
+[["f", "g"]]
+#Typing Correct
+f :: Int -> b;
+g :: Int -> b;
+#EndTyping

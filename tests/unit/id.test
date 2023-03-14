@@ -1,0 +1,11 @@
+id(x) :: Int -> Int {
+    return x;
+}
+#EndInput
+#Parser Skip
+#Pathanalysis Correct
+#Typing Correct
+id :: Int -> Int;
+#EndTyping
+#Overloading Correct
+#CodeGenerator Skip

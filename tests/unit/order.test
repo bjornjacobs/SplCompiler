@@ -1,0 +1,37 @@
+echo(x) :: Int -> Int {
+    print(x);
+    print('\n');
+    return x;
+}
+sum(a, b, c, d) {
+    return d + c + b + a;
+}
+main() {
+    var x = echo(5) + echo(6);
+    var y = echo(5) : (echo(6) : []);
+    var z = echo(sum(echo(1), echo(2), echo(3), echo(4)));
+    return;
+}
+#EndInput
+#Pathanalysis Correct
+#Typing Correct
+echo :: Int -> Int;
+sum :: Int Int Int Int -> Int;
+main :: -> Void; {
+    x :: Int;
+    y :: [Int];
+    z :: Int;
+}
+#EndTyping
+#CodeGenerator Correct
+5
+6
+5
+6
+4
+3
+2
+1
+10
+
+#EndCodeGenerator

@@ -1,0 +1,18 @@
+Int n = 5;
+Bool op = 1 + n/2 - n % 2 < n;
+Bool op2 = ((1 + n)/2) - n % 2 < n;
+main() {
+    print(n);
+    print('\n');
+    print(op);
+    print('\n');
+    print(op2);
+    print('\n');
+}
+#EndInput
+#CodeGenerator Correct
+5
+True
+True
+
+#EndCodeGenerator

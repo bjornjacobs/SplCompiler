@@ -1,0 +1,6 @@
+main() {
+    Int i = 'c';
+    return;
+}
+#EndInput
+#Typing Error

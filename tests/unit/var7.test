@@ -1,0 +1,13 @@
+// swap the elements in a tuple
+swap ( tuple ) {
+    var tmp = tuple.fst;
+    tuple.fst = tuple.snd;
+    tuple.snd = tmp;
+    return tuple;
+}
+#EndInput
+#Typing Correct
+swap :: (a, a) -> (a, a); {
+    tmp :: a;
+}
+#EndTyping

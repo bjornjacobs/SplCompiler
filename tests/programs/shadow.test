@@ -1,0 +1,25 @@
+f ( n ) :: Int -> Int {
+	Int n = 21;
+	return n + n;
+}
+main() {
+	print(f(21));
+	print('\n');
+	print(f(0));
+	print('\n');
+	print(f(12));
+	print('\n');
+}
+#EndInput
+#Typing Correct
+f :: Int -> Int; {
+	n :: Int;
+}
+main :: -> Void;
+#EndTyping
+#CodeGenerator Correct
+42
+42
+42
+
+#EndCodeGenerator

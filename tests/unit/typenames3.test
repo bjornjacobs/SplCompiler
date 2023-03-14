@@ -1,0 +1,6 @@
+main(y) {
+    a x = y;
+    return;
+}
+#EndInput
+#Parser Error

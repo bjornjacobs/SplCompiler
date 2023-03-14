@@ -1,0 +1,13 @@
+main() {
+    var x = 0 : [];
+    var y = 1 : x;
+    x.tl = y;
+    print(x.hd);
+    print(x.tl.hd);
+    print(x.tl.tl.hd);
+    print(x.tl.tl.tl.hd);
+}
+#EndInput
+#CodeGenerator Correct
+0101
+#EndCodeGenerator

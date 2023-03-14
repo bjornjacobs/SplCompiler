@@ -1,0 +1,6 @@
+f() :: -> Void
+{
+	return (((((((((((((5))))))))))));
+}
+#EndInput
+#Parser Error

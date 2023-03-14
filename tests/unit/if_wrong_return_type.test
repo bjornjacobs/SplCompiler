@@ -1,0 +1,15 @@
+main() {
+    if (True) {return 1;} else {return True;}
+}
+#EndInput
+#Parser Correct
+main() {
+    if (True) {
+        return 1;
+    } else {
+        return True;
+    }
+}
+#EndParser
+#Pathanalysis Correct
+#Typing Error

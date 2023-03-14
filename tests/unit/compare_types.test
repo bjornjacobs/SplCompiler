@@ -1,0 +1,9 @@
+var x = 1 < 1;
+var y = 1 == 1;
+var z = x == y;
+#EndInput
+#Typing Correct
+x :: Bool;
+y :: Bool;
+z :: Bool;
+#EndTyping

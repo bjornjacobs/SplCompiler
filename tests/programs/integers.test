@@ -1,0 +1,14 @@
+// Absolute value, in a strange layout
+abs (n) { if (n<0) { return-n; } else { return n ; } }
+main() {
+    print(abs(-30));
+    print(abs(-35));
+    print(abs(0));
+    print(abs(-0));
+    print(abs(17));
+    print(abs(22));
+}
+#EndInput
+#CodeGenerator Correct
+3035001722
+#EndCodeGenerator

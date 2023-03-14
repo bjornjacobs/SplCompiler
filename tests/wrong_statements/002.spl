@@ -1,0 +1,5 @@
+if (f(3 + x) == (2, [])) {
+    return f(x);
+} else {
+    return 0;//(0, [5]);
+}

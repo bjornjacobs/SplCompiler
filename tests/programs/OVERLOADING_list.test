@@ -1,0 +1,27 @@
+equals(a, b) :: [a] [a] -> Bool {
+	if (isEmpty(a) && isEmpty(b)) { return True; }
+	if (isEmpty(a) || isEmpty(b)) { return False; }
+	return (a.hd == b.hd) && equals (a.tl, b.tl);	
+}
+main() {
+	var x = 1:2:3:[];
+	var y = 1:2:3:[];
+	var z = 5:2:3:[];
+	print(equals(x, y));
+	print('\n');
+	print(equals(x, z));
+	print('\n');
+	print(equals(x, []));
+	print('\n');
+	print(equals([], []));
+	print('\n');
+}
+#EndInput
+#Overloading Error
+#CodeGenerator Correct
+True
+False
+False
+True
+
+#EndCodeGenerator
